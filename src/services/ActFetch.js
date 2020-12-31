@@ -1,4 +1,4 @@
-export default function ActFetch(url) {
+export default function actFetch(url) {
     const baseUrl = 'https://jsonplaceholder.typicode.com';
     return fetch(baseUrl + url).then(response => response.json());
 }
