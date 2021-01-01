@@ -1,11 +1,9 @@
-import React from "react";
-
 export default function  RenderUser(props) {
-    const {oneUser} = props;
+    const {oneUser, oneUser: {id, name}, details} = props;
     return (
         <div>
-            {oneUser.id} - {oneUser.name}
-            <button>details...</button>
+            {id} - {name}
+            <button onClick={() => details(oneUser)}>details...</button>
         </div>
     )
 }
