@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import { useState } from 'react';
 
 export default function EditUserWindow(props) {
     const {fullUserInfo, fullUserInfo: {name, username, email, phone, website}, saveEditUser} = props;
     const [savedUsers, setSavedUsers] = useState(fullUserInfo);
     console.log(savedUsers)
 
-    const inputName = (e) => setSavedUsers((prevState) => ({...prevState, name: e.target.value}));
-    const inputUserName = (e) => setSavedUsers((prevState) => ({...prevState, username: e.target.value}));
-    const inputEmail = (e) => setSavedUsers((prevState) => ({...prevState, email: e.target.value}));
-    const inputPhone = (e) => setSavedUsers((prevState) => ({...prevState, phone: e.target.value}));
-    const inputWebsite = (e) => setSavedUsers((prevState) => ({...prevState, website: e.target.value}));
+    const inputName = (e) => setSavedUsers(qq => ({...qq, name: e.target.value}));
+    const inputUserName = (e) => setSavedUsers(prevState => ({...prevState, username: e.target.value}));
+    const inputEmail = (e) => setSavedUsers(prevState => ({...prevState, email: e.target.value}));
+    const inputPhone = (e) => setSavedUsers(prevState => ({...prevState, phone: e.target.value}));
+    const inputWebsite = (e) => setSavedUsers(prevState => ({...prevState, website: e.target.value}));
 
     return (
         <div>

@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function CreateUserWindow(props) {
     const {createUser} = props;
     const initialState = {id: '...missed data', name: '...missed data', username: '...missed data', email: '...missed data', phone: '...missed data', website: '...missed data'};
     const [newUser, setNewUser] = useState(initialState);
 
-    const inputName = (e) => setNewUser((prevState) => ({...prevState, name: e.target.value}));
-    const inputUserName = (e) => setNewUser((prevState) => ({...prevState, username: e.target.value}));
-    const inputEmail = (e) => setNewUser((prevState) => ({...prevState, email: e.target.value}));
-    const inputPhone = (e) => setNewUser((prevState) => ({...prevState, phone: e.target.value}));
-    const inputWebsite = (e) => setNewUser((prevState) => ({...prevState, website: e.target.value}));
+    const inputName = (e) => setNewUser(prevState => ({...prevState, name: e.target.value}));
+    const inputUserName = (e) => setNewUser(prevState => ({...prevState, username: e.target.value}));
+    const inputEmail = (e) => setNewUser(prevState => ({...prevState, email: e.target.value}));
+    const inputPhone = (e) => setNewUser(prevState => ({...prevState, phone: e.target.value}));
+    const inputWebsite = (e) => setNewUser(prevState => ({...prevState, website: e.target.value}));
 
     return (
         <div>

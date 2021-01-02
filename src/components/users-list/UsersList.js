@@ -41,6 +41,7 @@ function ActUserList(props) {
         console.log(newUsers)
         setUsers(newUsers);
         setFullUserInfo();
+        setEditUserWindow();
     }
 
     const showCreateUserWindow = () => {
@@ -71,7 +72,7 @@ function ActUserList(props) {
         );
     } return (
         <div>
-            <h3>Pending UserList</h3>
+            <h3>Pending USERS LIST:</h3>
             <Loading/>
         </div>
     )
