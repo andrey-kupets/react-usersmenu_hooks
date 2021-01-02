@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import  { useEffect, useState } from 'react';
 import './UsersList.css';
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import actFetch from "../../services/ActFetch";
 import RenderUser from "../user/User";
 import Loading from "../../services/loading/Loading";
