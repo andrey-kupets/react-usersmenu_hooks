@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 export default function EditUserWindow(props) {
     const {fullUserInfo, fullUserInfo: {name, username, email, phone, website}, saveEditUser} = props;
-    const [savedUsers, setSavedUsers] = useState();
+    const [savedUsers, setSavedUsers] = useState(fullUserInfo);
     console.log(savedUsers)
 
     const inputName = (e) => setSavedUsers((prevState) => ({...prevState, name: e.target.value}));
