@@ -6,7 +6,7 @@ export default function CreateUserWindow(props) {
     const [newUser, setNewUser] = useState(initialState);
 
     const inputName = (e) => setNewUser(prevState => ({...prevState, name: e.target.value}));
-    const inputUserName = (e) => setNewUser(prevState => ({...prevState, username: e.target.value}));
+    const inputUsername = (e) => setNewUser(prevState => ({...prevState, username: e.target.value}));
     const inputEmail = (e) => setNewUser(prevState => ({...prevState, email: e.target.value}));
     const inputPhone = (e) => setNewUser(prevState => ({...prevState, phone: e.target.value}));
     const inputWebsite = (e) => setNewUser(prevState => ({...prevState, website: e.target.value}));
@@ -20,8 +20,8 @@ export default function CreateUserWindow(props) {
                     <input onInput={inputName} type={'text'}/>
                 </div>
                 <div>
-                    <label>UserName:</label>
-                    <input onInput={inputUserName} type={'text'}/>
+                    <label>Username:</label>
+                    <input onInput={inputUsername} type={'text'}/>
                 </div>
                 <div>
                     <label>Email:</label>

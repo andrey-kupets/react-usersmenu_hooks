@@ -17,7 +17,7 @@ function ActUserList(props) {
     useEffect(() => {
         const {match: {url}} = props;
         actFetch(url).then(json => setUsers(json))
-    }, [])
+    }, []);
 
     const clickForDetails = (info) => {
         setFullUserInfo(info);
@@ -34,7 +34,7 @@ function ActUserList(props) {
             clickForDetails(editedUser)
             }
             setEditUserWindow();
-    }
+    };
 
     const deleteUser = (id) => {
         const newUsers = users.filter(user => user.id !== id);
@@ -42,7 +42,7 @@ function ActUserList(props) {
         setUsers(newUsers);
         setFullUserInfo();
         setEditUserWindow();
-    }
+    };
 
     const showCreateUserWindow = () => {
         setCreateUserWindow('visible');
@@ -62,12 +62,12 @@ function ActUserList(props) {
             <div className={'parent'}>
                 <div>
                     <h3>USERS LIST:</h3>
-                    {users.map(user => <RenderUser oneUser={user} key={user.id} details={clickForDetails}/>)}
+                    {!!users && users.map(user => <RenderUser oneUser={user} key={user.id} details={clickForDetails}/>)}
                     <button onClick={showCreateUserWindow}>Create User</button>
                 </div>
-                {fullUserInfo && <ProvideFullUserInfo fullUserInfo={fullUserInfo} showEditUserWindow={showEditUserWindow} deleteUser={deleteUser}/>}
-                {editUserWindow && <EditUserWindow fullUserInfo={fullUserInfo} saveEditUser={saveEditUser}/>}
-                {createUserWindow && <CreateUserWindow createUser={createUser}/>}
+                {!!fullUserInfo && <ProvideFullUserInfo fullUserInfo={fullUserInfo} showEditUserWindow={showEditUserWindow} deleteUser={deleteUser}/>}
+                {!!editUserWindow && <EditUserWindow fullUserInfo={fullUserInfo} saveEditUser={saveEditUser}/>}
+                {!!createUserWindow && <CreateUserWindow createUser={createUser}/>}
             </div>
         );
     } return (
@@ -75,7 +75,7 @@ function ActUserList(props) {
             <h3>Pending USERS LIST:</h3>
             <Loading/>
         </div>
-    )
+    );
 }
 
 export default withRouter(ActUserList);
